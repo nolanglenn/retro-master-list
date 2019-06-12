@@ -65,6 +65,25 @@ export default class Form extends Component {
                                onChange={this.onChangeGame}
                                />
                     </div>
+                    <div className='form-group'>
+                        <label>Release year: </label>
+                        <input type='text' 
+                               className='form-control' 
+                               value={this.state.year}
+                               onChange={this.onChangeYear}
+                               />
+                    </div>
+                    <div className='form-group'>
+                        <label>Platform: </label>
+                        <input type='text' 
+                               className='form-control' 
+                               value={this.state.platform}
+                               onChange={this.onChangePlatform}
+                               />
+                    </div>
+                    <div className='form-group'>
+                        <input type='submit' value='Add Game' className='btn btn-primary' />
+                    </div>
                 </form>
             </div>
         )
