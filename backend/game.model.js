@@ -6,7 +6,7 @@ let Game = new Schema({
         type: String
     },
     year: {
-        type: Date
+        type: String
     },
     platform: {
         type: String

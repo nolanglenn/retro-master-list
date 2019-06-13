@@ -29,13 +29,13 @@ gameRoutes.route('/').get(function(req, res) {
     });
 });
 
-// gameRoutes.route('/:id').get(function(req, res) {
-//     let id = req.params.id;
+gameRoutes.route('/:id').get(function(req, res) {
+    let id = req.params.id;
 
-//     Game.findById(id, function(err, game) {
-//         res.json(game);
-//     });
-// });
+    Game.findById(id, function(err, game) {
+        res.json(game);
+    });
+});
 
 gameRoutes.route('/add').post(function(req, res) {
     let game = new Game(req.body);
@@ -48,6 +48,8 @@ gameRoutes.route('/add').post(function(req, res) {
             res.status(400).send('adding new game failed');
         });
 });
+
+
 
 app.use('/games', gameRoutes);
 
