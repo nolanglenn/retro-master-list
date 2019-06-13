@@ -5,21 +5,21 @@ export default class Form extends Component {
     constructor (props) {
         super(props);
 
-        this.onChangeGame = this.onChangeGame.bind(this);
+        this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeYear = this.onChangeYear.bind(this);
         this.onChangePlatform = this.onChangePlatform.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            game: '',
+            title: '',
             year: '',
             platform: ''
         }
     }
 
-    onChangeGame (e) {
+    onChangeTitle (e) {
         this.setState({
-            game: e.target.value
+            title: e.target.value
         });
     }
 
@@ -39,14 +39,14 @@ export default class Form extends Component {
         e.preventDefault();
 
         console.log('Form submitted:');
-        console.log(`Game: ${this.state.game}`);
+        console.log(`Title: ${this.state.title}`);
         console.log(`Year: ${this.state.year}`);
         console.log(`Platform: ${this.state.platform}`);
         
         
 
         this.setState({
-            game: '',
+            title: '',
             year: '',
             platform: ''
         })
@@ -61,8 +61,8 @@ export default class Form extends Component {
                         <label>Game title: </label>
                         <input type='text' 
                                className='form-control' 
-                               value={this.state.game}
-                               onChange={this.onChangeGame}
+                               value={this.state.title}
+                               onChange={this.onChangeTitle}
                                />
                     </div>
                     <div className='form-group'>
@@ -82,7 +82,7 @@ export default class Form extends Component {
                                />
                     </div>
                     <div className='form-group'>
-                        <input type='submit' value='Add Game' className='btn btn-primary' />
+                        <input type='submit' value='Add game' className='btn btn-primary' />
                     </div>
                 </form>
             </div>
