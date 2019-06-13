@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Form extends Component {
 
@@ -43,7 +44,14 @@ export default class Form extends Component {
         console.log(`Year: ${this.state.year}`);
         console.log(`Platform: ${this.state.platform}`);
         
-        
+        const newGame = {
+            title: this.state.title,
+            year: this.state.year,
+            platform: this.state.platform
+        }
+
+        axios.post('http://localhost:4000/games/add', newGame)
+             .then(res => console.log(res.data));
 
         this.setState({
             title: '',
