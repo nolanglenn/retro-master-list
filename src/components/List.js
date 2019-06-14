@@ -4,9 +4,9 @@ import axios from 'axios';
 
 const Game = props => (
     <tr>
-        <td>{ props.game.title }</td>
-        <td>{ props.game.year }</td>
-        <td>{ props.game.platform }</td>
+        <td>{ props.game.Title }</td>
+        <td>{ props.game.Year }</td>
+        <td>{ props.game.Platform }</td>
         <td>
             <Link to={'/add/' + props.game.id}>Add Game</Link>
         </td>
@@ -22,9 +22,11 @@ export default class List extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/games')
+        axios.get('http://localhost:4000/rml')
              .then(response => {
                  this.setState({ games: response.data });
+                 console.log(response.data);
+                 
              })
              .catch(function(error) {
                  console.log(error);

@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let Game = new Schema({
-    title: {
+    Title: {
         type: String
     },
-    year: {
+    Year: {
         type: String
     },
-    platform: {
+    Platform: {
         type: String
     }
 });

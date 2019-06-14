@@ -12,27 +12,27 @@ export default class Form extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            title: '',
-            year: '',
-            platform: ''
+            Title: '',
+            Year: '',
+            Platform: ''
         }
     }
 
     onChangeTitle (e) {
         this.setState({
-            title: e.target.value
+            Title: e.target.value
         });
     }
 
     onChangeYear (e) {
         this.setState({
-            year: e.target.value
+            Year: e.target.value
         });
     }
 
     onChangePlatform (e) {
         this.setState({
-            platform: e.target.value
+            Platform: e.target.value
         });
     }
 
@@ -40,23 +40,23 @@ export default class Form extends Component {
         e.preventDefault();
 
         console.log('Form submitted:');
-        console.log(`Title: ${this.state.title}`);
-        console.log(`Year: ${this.state.year}`);
-        console.log(`Platform: ${this.state.platform}`);
+        console.log(`Title: ${this.state.Title}`);
+        console.log(`Year: ${this.state.Year}`);
+        console.log(`Platform: ${this.state.Platform}`);
         
         const newGame = {
-            title: this.state.title,
-            year: this.state.year,
-            platform: this.state.platform
+            Title: this.state.Title,
+            Year: this.state.Year,
+            Platform: this.state.Platform
         }
 
-        axios.post('http://localhost:4000/games/add', newGame)
+        axios.post('http://localhost:4000/rml/add', newGame)
              .then(res => console.log(res.data));
 
         this.setState({
-            title: '',
-            year: '',
-            platform: ''
+            Title: '',
+            Year: '',
+            Platform: ''
         })
     }
 
@@ -66,18 +66,18 @@ export default class Form extends Component {
                 <h3>Add game</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className='form-group'>
-                        <label>Game title: </label>
+                        <label>Game Title: </label>
                         <input type='text' 
                                className='form-control' 
-                               value={this.state.title}
+                               value={this.state.Title}
                                onChange={this.onChangeTitle}
                                />
                     </div>
                     <div className='form-group'>
-                        <label>Release year: </label>
+                        <label>Release Year: </label>
                         <input type='text' 
                                className='form-control' 
-                               value={this.state.year}
+                               value={this.state.Year}
                                onChange={this.onChangeYear}
                                />
                     </div>
@@ -85,7 +85,7 @@ export default class Form extends Component {
                         <label>Platform: </label>
                         <input type='text' 
                                className='form-control' 
-                               value={this.state.platform}
+                               value={this.state.Platform}
                                onChange={this.onChangePlatform}
                                />
                     </div>
