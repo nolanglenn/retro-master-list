@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Search from './Search'
 
 const Game = props => (
     <tr>
@@ -43,6 +44,7 @@ export default class List extends Component {
         return (
             <div>
                 <h3>Retro Master List</h3>
+                <Search />
                 <table className='table table-striped' style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
